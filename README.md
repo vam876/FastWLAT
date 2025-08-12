@@ -83,7 +83,7 @@
   - Redis 连接配置（Host/Port/Password/DB）
   - 模式切换（local/redis）
   - 数据与缓存管理
-  - <img width="554" height="294" alt="image" src="https://github.com/user-attachments/assets/d6d6e252-d3fd-4eb2-8454-dd7d70fc9f5d" />
+<img width="554" height="294" alt="image" src="https://github.com/user-attachments/assets/d6d6e252-d3fd-4eb2-8454-dd7d70fc9f5d" />
 
 
 ## 界面导航简介
