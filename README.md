@@ -1,157 +1,157 @@
-项目仍在优化中，以下为预发布版 README 草案，您可以关注项目获取最新的体验资格。
 ## FastWLAT（Fast Web Log Analysis Tool）
 
-基于 Electron + Vue 3 + TypeScript 的高性能 Web 日志分析工具。支持本地内存模式与 Redis 高性能模式，面向数十万级日志的导入、检索、分析与可视化。
+基于 Electron + Vue 3 + TypeScript 的高性能 Web 日志分析工具。支持本地内存模式、Zinc(未开放)与 Redis 高性能模式(未开放)。
+## 🏆 FastWLAT功能介绍
 
-- **跨平台桌面应用**：Windows/macOS/Linux
-- **大数据优化**：虚拟滚动、聚合树、分批导入、增量分析
-- **智能分析**：威胁规则引擎、可视化图表、动态采样
-- **模式可切换**：本地内存模式（轻量、极速）/ Redis 模式（高性能）
+更详细的功能介绍，请访问 T00ls.net
 
-## 预发布说明
+### 📊 智能仪表盘 - 访问态势一目了然
 
-- 此 README 为预发布版，用于展示产品能力与操作指引。
-- 新版 Redis 模式正在持续优化：全量显示、服务器端聚合、搜索分页、导入加速方案已就绪；计划补充更高级的服务端过滤，进一步提升搜索性能。
-
-## 功能总览
-
-- **数据导入**
-  - 支持 Apache/Nginx/IIS/Tomcat/自定义 JSON 等格式
-  - Web Workers 并行解析（UI 不阻塞）
-  - 超大文件自动分片、增量进度反馈
-  - 本地模式存内存；Redis 模式入库流处理
-
-- **日志视图（Log View）**
-  - 列表/树状/分析三种视图模式
-  - 高性能虚拟滚动
-  - 过滤与搜索（状态码、IP、方法、路径、时间范围等）
-  - 树状视图（Redis 模式）采用服务器端聚合（Top URLs）秒级构建
- 
-<img width="554" height="294" alt="image" src="https://github.com/user-attachments/assets/d08ba216-d954-4a8b-b29e-8fe8a4707891" />
-
-<img width="554" height="294" alt="image" src="https://github.com/user-attachments/assets/0615edf1-8c74-43af-9541-3e34a91aa025" />
-
-<img width="554" height="294" alt="image" src="https://github.com/user-attachments/assets/0794c448-aa18-401b-aa10-cb698a7588cd" />
-<img width="554" height="294" alt="image" src="https://github.com/user-attachments/assets/d2b75c85-f74d-4bf4-be66-33f6a8722ff0" />
-<img width="554" height="294" alt="image" src="https://github.com/user-attachments/assets/bede1ae9-87ef-4af3-8361-57d5a1dbcb8b" />
+<img width="1666" height="942" alt="image-20250901113222134" src="https://github.com/user-attachments/assets/0d74b55a-b27a-4ad9-9c79-389ba31bf932" />
 
 
 
+### 📥 强大导入系统 - 支持主流WEB日志格式  
+
+- **格式全覆盖**: Apache、Nginx、IIS、Tomcat等日志格式
+
+- **智能识别**:   自动格式检测
+
+- **大文件处理**: 百万级日志处理优化
+
+- **三种方式**: 文件上传、文本粘贴、示例数据快速体验
+
+- 格式不兼容欢迎提供示例格式仅适配
+
+<img width="1657" height="942" alt="image-20250901111015860" src="https://github.com/user-attachments/assets/bb15021a-fbfd-44a6-95e5-f0dd10f66be4" />
+
+
+### 🔍 高性能日志视图 - 百万条日志秒级响应
+
+- **虚拟滚动**: 支持百万级日志流畅浏览
+
+- **多视图模式**: 表格、树状、聚合三种视图
+
+- **毫秒级搜索**: 全文搜索、正则匹配、条件过滤
+
+- **智能分页**: 动态加载，内存自动回收
+
+- **快速过滤功能**: 一键剔除静态文件，一键排除404、30X等状态码日志，留下清爽的日志浏览视图，即可节省渲染性能，也可以排除分析干扰和误报
+
+
+<img width="1650" height="889" alt="image-20250901111302683" src="https://github.com/user-attachments/assets/85327756-f27f-4147-9e07-f2f2c00ced24" />
+
+
+**上图：** 日志列表视图，可以快速过滤、搜索和分析
+
+<img width="1656" height="937" alt="image-20250901111437398" src="https://github.com/user-attachments/assets/6b259c74-f468-4123-a5d1-59391a2cfda2" />
+
+
+**上图：** 树目录视图，通过日志还原出网站原本的目录结构，可以折叠、展开，支持搜索、过滤、仅显示某个路径等多种功能，出现告警日志会显示分析按钮
+
+<img width="1264" height="779" alt="image-20250901111528374" src="https://github.com/user-attachments/assets/7b3566d7-33d1-4f71-8e21-e8e8274742ac" />
+
+
+**上图：** 出现告警的文件会由分析按钮，点击分析按钮进行高级分析视图（仅针对当前选择的路径）
+<img width="1149" height="800" alt="image-20250901111625012" src="https://github.com/user-attachments/assets/601aaafc-55b9-42f7-85fd-5e09893f72a0" />
+
+
+**上图：** 选择对应的文件会出现详情按钮，点击详情按钮进行详情视图（包含当前路径的所有日志进行展示）
+<img width="1645" height="899" alt="image-20250901111701236" src="https://github.com/user-attachments/assets/cef5584a-b86a-47f0-ba5f-17e6232c3911" />
+
+**上图：** 高级分析视图，可以快速排序、搜索和分析，点击分析按钮可以针对当前路径、IP、地区、状态码等数据进行汇聚分析
+
+
+### 📈 专业分析引擎 - 数据洞察一步到位
+
+- **多维分析**: 时间、状态码、用户代理、地理位置
+
+- **趋势识别**: 24小时访问模式、异常时段检测  
+
+- **性能分析**: 响应时间分布、错误率统计
+
+  ![image-20250901111855549](C:\Users\Waner\AppData\Roaming\Typora\typora-user-images\image-20250901111855549.png)
+
+
+### 🛡️ 智能威胁检测 - 企业级安全防护
+
+- **威胁类型**: 内置多种威胁检测规则，分析页面支持分类、筛选
+- **条件引擎**: 状态码、IP、时间、返回数据包大小等多维度精准匹配
+
+<img width="1646" height="898" alt="image-20250901111855549" src="https://github.com/user-attachments/assets/bb70ad6e-5223-419b-b034-0c723dc77fd1" />
 
 
 
 
+- **二次过滤**: 告警页面支持正则表达式二次匹配，高亮显示定位匹配规则快速优化
+
+<img width="1665" height="690" alt="image-20250901165129877" src="https://github.com/user-attachments/assets/0ba2ca85-19e0-42e3-ad71-9d82af5a7f11" />
 
 
+### 🗺️ 威胁地图可视化 - 全球威胁态势感知
+
+- **地理定位**: 基于MaxMind数据库的精准定位，通过优秀的前端库和地图数据进行可视化展示，将访问和攻击来源渲染到地图
+
+<img width="1605" height="763" alt="image-20250901112155492" src="https://github.com/user-attachments/assets/955a3911-c99e-4845-a527-6bf9ebd307cd" />
 
 
+- **实时动画**: 支持世界地图和中国地图进行动态展示，威胁来源一目了然
+
+<img width="1628" height="930" alt="image-20250901112300487" src="https://github.com/user-attachments/assets/6957e5ce-b1bb-4360-9728-4b34e6de5c39" />
 
 
+- **双模式**: 流量地图模式 ↔ 攻击地图模式无缝切换，攻击地图可以渲染出现告警的攻击数据，基于源IP和自定义防护地标进行攻击路径绘制
+
+<img width="1549" height="703" alt="image-20250901112325678" src="https://github.com/user-attachments/assets/54811a24-3a55-4c24-be15-1ec078da5620" />
 
 
+- **交互探索**: 缩放、筛选、详情查看，点击对应的地区节点出现详情卡片
+
+<img width="1599" height="937" alt="image-20250901112405723" src="https://github.com/user-attachments/assets/f3abfda3-8fb8-485e-86a6-de743b112667" />
 
 
+### ⚙️ 灵活规则管理 - 自定义安全策略
+
+<img width="1664" height="947" alt="image-20250901112433656" src="https://github.com/user-attachments/assets/fc04478a-08b0-4fa4-a417-3f9d7d8734db" />
 
 
+- **可视化配置**: 图形界面，无需编程基础
+
+- **条件组合**: HTTP方法、状态码、IP、时间范围、返回长度等
+
+- **实时生效**: 规则修改即时应用，无需重启
+
+- **高度自定义**: 可以添加删除优化告警规则，不加密，无任何限制
+
+<img width="1310" height="712" alt="image-20250901112457905" src="https://github.com/user-attachments/assets/ac8331d7-eff0-41a8-a4cc-d2652480806b" />
 
 
+### 🎨 个性化主题 - 适合每个团队的风格
+
+- **三种精美主题**: 天空蓝、简约灰、经典蓝紫
+- **一键切换**: 实时预览，用户偏好自动保存
+- **现代设计**: 现代化的UI/UX设计
+
+<img width="1791" height="989" alt="image-20250901112800633" src="https://github.com/user-attachments/assets/8892712e-834f-4496-b7f3-a4153153ada7" />
 
 
+### ⚙️ 智能设置中心 - 系统优化一站式
+
+- **三模式存储**: 本地内存、zinc（ES兼容）、Redis高性能无缝切换。目前仅开放内存模式
+
+- **性能监控**: 实时内存使用、缓存状态监控
+
+- **连接管理**: Redis自动重连和状态检测
+
+- **配置持久**: 用户设置自动保存和恢复
+
+<img width="1614" height="929" alt="image-20250901112826862" src="https://github.com/user-attachments/assets/d7394d36-56d7-4291-95b9-ed949f856862" />
 
 
+## 🎉 结语
 
-- **仪表盘（Dashboard）**
-  - 总量、独立 IP、带宽、响应时间等关键 KPI
-  - TOP IP、TOP 页面、错误分布
-  - 轻量读取 Redis 统计，避免全量抓取
-<img width="554" height="294" alt="image" src="https://github.com/user-attachments/assets/35c122a3-c9b3-4ff3-af01-f10e80248880" />
+FastWLAT不仅仅是一个日志分析工具，更是我们对Web日志分析工具的方法和技巧的思考和实践结果。通过创新、高度自定义的功能实现和友好的用户界面，希望能够真正解决一部分WEB日志分析的痛点，进一步降低WEB日志分析的门槛。
 
-- **威胁分析（Threat Analysis）**
-  - 规则引擎（可启用/禁用）
-  - 大数据优化：5 万以下全量分析，以上自动采样（可强制全量）
-  - 可视化图表：威胁等级分布、分类统计、时间线、IP 与方法画像
-<img width="554" height="294" alt="image" src="https://github.com/user-attachments/assets/a7f31e9d-7e53-45de-ae50-da3fbf5c6903" />
-<img width="554" height="294" alt="image" src="https://github.com/user-attachments/assets/2309f23e-faff-4af7-aed2-9a574a7b0eaa" />
+相信，好的工具应该是简单易用的，强大的功能应该是开放透明的。FastWLAT的代码99%由于AI生成，后续优化完成后会进行完全开源。
 
-
-- **规则管理（Rules）**
-  - 自定义规则（名称、正则、等级、分类、启停）
-  - 一键重新分析
-<img width="554" height="294" alt="image" src="https://github.com/user-attachments/assets/cf4896c6-ebc0-4720-b50b-af72ef34e8bb" />
-
-- **设置（Settings）**
-  - Redis 连接配置（Host/Port/Password/DB）
-  - 模式切换（local/redis）
-  - 数据与缓存管理
-<img width="554" height="294" alt="image" src="https://github.com/user-attachments/assets/d6d6e252-d3fd-4eb2-8454-dd7d70fc9f5d" />
-
-
-## 界面导航简介
-
-- **导入页面（Import）**：选择文件/示例/粘贴文本，查看格式检测、解析进度、分批存储进度；支持超大数据自动分片与进度条反馈。
-- **日志页面（Log View）**：
-  - 列表：分页与虚拟滚动
-  - 树状：本地模式使用全量构建；Redis 模式使用 Top URLs 聚合秒级生成
-  - 分析：大数据下自动采样（可切换强制全量）
-- **仪表盘（Dashboard）**：总览统计图与 TOP 榜单，实时指标（模拟或来源统计）。
-- **威胁分析（Threat Analysis）**：规则引擎、图表视图、分类/规则筛选、动态加载日志。
-- **规则管理（Rules）**：新增/编辑/启用/禁用规则。
-- **设置（Settings）**：Redis 连接、数据模式、清理数据、调试信息。
-
-
-## 数据模式
-
-- **本地内存模式（local）**
-  - 适合小中等数据量（<40 万）
-  - 解析后直接写入内存 store
-  - 所有分析在本地完成
-
-- **Redis 模式（redis）**
-  - 适合大数据量（数十万至上百万）
-  - 解析后分批写入 Redis（默认每批 10000）
-  - 树视图使用服务端聚合（Top URLs）秒开
-  - 仪表盘/分析页优先读取统计，避免全量拉取
-
-在设置页面可切换模式；应用在启动时会自动检测 Redis 连接（断网/不可用时回退到本地模式）。
-
-## 使用流程
-
-- **导入日志**
-  - 从文件/示例/粘贴导入
-  - 自动格式检测（或手动指定）
-  - 并行解析 + 分片入库（Redis）
-  - 进度实时显示（解析 0-80%；存储 80%-100%）
-
-- **浏览与过滤**
-  - 日志页面切换列表/树/分析
-  - 按 IP/方法/状态码/路径/时间范围过滤
-  - Redis 模式下搜索：优先聚合辅助 + 分段回填（计划增强为服务器端分页过滤）
-
-- **威胁分析**
-  - 加载规则 → 采样/全量分析
-  - 查看图表、分类、TOP IP/方法、时间线
-  - 可启用/禁用规则并重新分析
-
-## 性能优化（已内置）
-
-- 并行解析：Web Workers，避免 UI 阻塞
-- 分批入库：默认 10000/批，聚合统计合并一次性提交
-- 树状聚合：Redis 模式使用 `Top URLs` 聚合构建树
-- 虚拟滚动：大列表渲染优化
-- 分析采样：>5 万自动采样（可强制全量）
-- 轻量统计：仪表盘与分析先读 Redis 统计，再补全明细
-
-## 已知问题与说明（预发布）
-
-- **Redis 搜索过滤在极大数据集下仍可能偏慢**：短期通过“聚合辅助 + 分段回填”已优化；后续将增补主进程 `queryLogs` 的 path/method/status 基础过滤与分页游标，彻底后端化。
-- **导入时控制台可能出现少量 URL 解码告警**：已加严格判断（仅在合法 `%xx` 时解码），不会中断导入。
-- **首次切换到 Redis 模式后建议重启应用**：确保预加载 API（如 `getTopUrls`）完成注入，避免 “not a function”。
-
-
-## 路线图（Roadmap）
-
-- 服务器端分页过滤：`queryLogs` 支持 path/method/status + offset/limit
-- 更丰富的图表与报表导出
-- 更强规则引擎（分组、权重、动作、告警）
-- 多源采集与实时流（WebSocket/Stream）
-- 国际化（i18n）与更多主题
+程序还在不断完善中，目前版本可能存在较多的BUG，欢迎各位贡献告警规则和提出贴合实战改进建议，在程序开源前都会进行持续的优化。由于图形界面和Tree视图的影响，目前在处理大日志文件时存在一些问题，后续版本会开放Redis和Zinc模式，支持更大体量的日志导入分析。
