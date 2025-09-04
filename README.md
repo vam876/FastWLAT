@@ -3,11 +3,14 @@
 基于 Electron + Vue 3 + TypeScript 的高性能 Web 日志分析工具。支持本地内存模式、Zinc(未开放)与 Redis 高性能模式(未开放)。
 ## 🏆 FastWLAT功能介绍
 
-更详细的功能介绍，请访问 T00ls.net
+- **最新版本**: V1.0.1
+
+- **更新日期**: 2025/09/03
 
 ### 📊 智能仪表盘 - 访问态势一目了然
 
-<img width="1666" height="942" alt="image-20250901113222134" src="https://github.com/user-attachments/assets/0d74b55a-b27a-4ad9-9c79-389ba31bf932" />
+<img width="1384" height="861" alt="image" src="https://github.com/user-attachments/assets/816b4e09-9cf1-4a55-a51c-a1d4522048c4" />
+
 
 
 
