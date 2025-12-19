@@ -1,23 +1,20 @@
 ## FastWLAT（Fast Web Log Analysis Tool）
 
-基于 Electron + Vue 3 + TypeScript 的高性能 Web 日志分析工具。支持本地内存模式、Zinc(未开放)与 Redis 高性能模式(未开放)。
+FastWLAT 是一款基于 Electron + Vue 3 + TypeScript 开发的现代化 Web 日志分析工具。专为安全应急响应和日志分析场景设计，提供高性能的日志解析、智能威胁检测、地理位置可视化等功能。
+
 ## 🏆 FastWLAT功能介绍
 
 
-- **最新版本**: V1.0.2
+- **最新版本**: V1.1.0
 
-- **更新日期**: 2025/10/08 
+- **更新日期**: 2025/12/18 
 
-- **下载地址（Windows/macOS/Linux）**
+- **下载地址**
+  
+最新版下载(Windows) https://github.com/vam876/FastWLAT/releases/tag/v1.1.0
+
+旧版下载（Windows/macOS/Linux)
 https://github.com/vam876/FastWLAT/releases/tag/v1.0.1
-
-
-
-## 为什么要写这个工具？
-
-经常要参与一些小应急，大部分都是web攻击类型，但是一直没有一款好用的工具辅助分析，结合T00ls文章 [应急响应web日志分析工具] https://www.t00ls.com/viewthread.php?tid=73563  的试用情况，经过调研和实践，我们发现现有的WEB日志分析工具都存在以下一些痛点：
-
-由于作者获取信息途径相对较窄，接触的工具也比较少，以下个人的观点仅供参考。
 
 ### 现有工具的痛点分析
 
@@ -39,15 +36,22 @@ https://github.com/vam876/FastWLAT/releases/tag/v1.0.1
 - 年代久远，技术架构落后
 - 长期无人维护
 
-正是基于这些痛点，我们决定从零开始，花了五天时间打造一款真正现代化、用户友好、高度自定义和支持多视图的Web日志分析工具，最终目的是实现**即可给领导直观的展示，也可以通过工具快速识别恶意WEB攻击**。
+正是基于这些痛点，我们决定从零开始，花了五天时间打造一款真正现代化、用户友好、高度自定义和支持多视图的Web日志分析工具，最终目的是实现**既可给领导直观的展示，也可以通过工具快速识别恶意WEB攻击**。
 
----
+  
+
+### 🎯 软件架构
+
+<img width="1697" height="426" alt="image" src="https://github.com/user-attachments/assets/34236fa3-7084-431f-965e-f2c70935f754" />
+
+### 日志分析流程 
+
+<img width="857" height="903" alt="image" src="https://github.com/user-attachments/assets/aa4314bd-c71c-401a-9637-4988465cebdc" />
+
 
 ### 📊 智能仪表盘 - 访问态势一目了然
 
 <img width="1384" height="861" alt="image" src="https://github.com/user-attachments/assets/816b4e09-9cf1-4a55-a51c-a1d4522048c4" />
-
-
 
 
 ### 📥 强大导入系统 - 支持主流WEB日志格式  
@@ -128,6 +132,8 @@ https://github.com/vam876/FastWLAT/releases/tag/v1.0.1
 
 
 ### 🗺️ 威胁地图可视化 - 全球威胁态势感知
+<img width="988" height="896" alt="image" src="https://github.com/user-attachments/assets/053fe3f1-53da-4d15-bca6-bf7bc854434a" />
+
 
 - **地理定位**: 基于MaxMind数据库的精准定位，通过优秀的前端库和地图数据进行可视化展示，将访问和攻击来源渲染到地图
 
@@ -175,8 +181,10 @@ https://github.com/vam876/FastWLAT/releases/tag/v1.0.1
 
 
 ### ⚙️ 智能设置中心 - 系统优化一站式
+<img width="759" height="928" alt="image" src="https://github.com/user-attachments/assets/ea626582-d3e8-4bdf-a266-33df5c4e9bae" />
 
-- **三模式存储**: 本地内存、zinc（ES兼容）、Redis高性能无缝切换。目前仅开放内存模式
+
+- **三模式存储**: 本地内存、zinc（ES兼容）、Redis高性能（v1.1.0版本开始已弃用，改为IndexedDB持久化存储）无缝切换。目前仅开放内存模式
 
 - **性能监控**: 实时内存使用、缓存状态监控
 
@@ -238,7 +246,6 @@ export const VirtualScrollList = defineComponent({
 > **这是FastWLAT和让其他日志分析工具不同的功能**
 
 **解决的核心痛点**:
-干了8年安服工作，多年前就一直希望有工具能通过日志还原出完整的网站目录结构，通过折叠和展开功能快速理解访问情况，类似使用扫描工具的爬虫功能。
 
 - 快速理解整个网站架构
 - 希望直观看到每个路径的访问频次和威胁分布
@@ -1318,7 +1325,7 @@ export function useVirtualScroll<T>(
    - 交互式节点详情展示
 
 4. **⚡ 多模式存储架构**:
-   - 本地/Redis/Zinc三模式
+   - 本地/IndexedDB/Zinc三模式
    - 运行时无缝切换
    - 性能与成本的完美平衡
 
@@ -1335,4 +1342,4 @@ export function useVirtualScroll<T>(
 
 FastWLAT不仅仅是一个日志分析工具，更是我们对Web日志分析工具的方法和技巧的思考和实践结果。通过创新、高度自定义的功能实现和友好的用户界面，希望能够真正解决一部分WEB日志分析的痛点，进一步降低WEB日志分析的门槛。
 
-程序还在不断完善中，目前版本可能存在较多的BUG，欢迎各位贡献告警规则和提出贴合实战改进建议，在程序开源前都会进行持续的优化。由于图形界面和Tree视图的影响，目前在处理大日志文件时存在一些问题，后续版本会开放Redis和Zinc模式，支持更大体量的日志导入分析。
+程序还在不断完善中，目前版本可能存在较多的BUG，欢迎各位贡献告警规则和提出贴合实战改进建议，在程序开源前都会进行持续的优化。由于图形界面和Tree视图的影响，目前在处理大日志文件时存在一些问题，后续版本会开放Zinc*（ES兼容）模式，支持更大体量的日志导入分析。
