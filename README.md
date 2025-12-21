@@ -1,9 +1,11 @@
+
 ## FastWLAT（Fast Web Log Analysis Tool）
 
 FastWLAT 是一款基于 Electron + Vue 3 + TypeScript 开发的现代化 Web 日志分析工具。专为安全应急响应和日志分析场景设计，提供高性能的日志解析、智能威胁检测、地理位置可视化等功能。
 
-## 🏆 FastWLAT功能介绍
+[Windows日志分析工具链接](https://github.com/vam876/FastWinLog ) | [Linux日志分析工具链接](https://github.com/vam876/FastLinLog )
 
+## 🏆 FastWLAT功能介绍
 
 - **最新版本**: V1.1.0
 
@@ -15,6 +17,7 @@ FastWLAT 是一款基于 Electron + Vue 3 + TypeScript 开发的现代化 Web �
 
 旧版下载（Windows/macOS/Linux)
 https://github.com/vam876/FastWLAT/releases/tag/v1.0.1
+
 
 ### 现有工具的痛点分析
 
