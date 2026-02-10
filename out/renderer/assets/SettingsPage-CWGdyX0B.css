@@ -1,0 +1,129 @@
+
+/* 自定义动画 */
+@keyframes blob-f6cdeca1 {
+0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+}
+33% {
+    transform: translate(30px, -50px) scale(1.1);
+}
+66% {
+    transform: translate(-20px, 20px) scale(0.9);
+}
+}
+@keyframes fade-in-up-f6cdeca1 {
+from {
+    opacity: 0;
+    transform: translateY(30px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+@keyframes slide-in-left-f6cdeca1 {
+from {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+}
+@keyframes slide-in-right-f6cdeca1 {
+from {
+    opacity: 0;
+    transform: translateX(50px);
+}
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+}
+@keyframes slide-in-up-f6cdeca1 {
+from {
+    opacity: 0;
+    transform: translateY(50px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+@keyframes scale-in-f6cdeca1 {
+from {
+    opacity: 0;
+    transform: scale(0.9);
+}
+to {
+    opacity: 1;
+    transform: scale(1);
+}
+}
+.animate-blob[data-v-f6cdeca1] {
+  animation: blob-f6cdeca1 7s infinite;
+}
+.animate-fade-in-up[data-v-f6cdeca1] {
+  animation: fade-in-up-f6cdeca1 0.8s ease-out;
+}
+.animate-slide-in-left[data-v-f6cdeca1] {
+  animation: slide-in-left-f6cdeca1 0.8s ease-out;
+}
+.animate-slide-in-right[data-v-f6cdeca1] {
+  animation: slide-in-right-f6cdeca1 0.8s ease-out;
+}
+.animate-slide-in-up[data-v-f6cdeca1] {
+  animation: slide-in-up-f6cdeca1 0.8s ease-out;
+}
+.animate-scale-in[data-v-f6cdeca1] {
+  animation: scale-in-f6cdeca1 0.6s ease-out;
+}
+.animation-delay-200[data-v-f6cdeca1] {
+  animation-delay: 0.2s;
+}
+.animation-delay-400[data-v-f6cdeca1] {
+  animation-delay: 0.4s;
+}
+.animation-delay-600[data-v-f6cdeca1] {
+  animation-delay: 0.6s;
+}
+.animation-delay-2000[data-v-f6cdeca1] {
+  animation-delay: 2s;
+}
+.animation-delay-4000[data-v-f6cdeca1] {
+  animation-delay: 4s;
+}
+
+/* 消息过渡动画 */
+.message-enter-active[data-v-f6cdeca1],
+.message-leave-active[data-v-f6cdeca1] {
+  transition: all 0.3s ease;
+}
+.message-enter-from[data-v-f6cdeca1] {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.message-leave-to[data-v-f6cdeca1] {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* 右上角通知动画 */
+.notification-enter-active[data-v-f6cdeca1],
+.notification-leave-active[data-v-f6cdeca1] {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.notification-enter-from[data-v-f6cdeca1] {
+  opacity: 0;
+  transform: translateX(100%) scale(0.8);
+}
+.notification-leave-to[data-v-f6cdeca1] {
+  opacity: 0;
+  transform: translateX(100%) scale(0.8);
+}
+.notification-enter-to[data-v-f6cdeca1],
+.notification-leave-from[data-v-f6cdeca1] {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}

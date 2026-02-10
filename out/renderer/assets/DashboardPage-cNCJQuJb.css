@@ -1,0 +1,77 @@
+
+.metric-card[data-v-ec8d540e] {
+  position: relative;
+  overflow: hidden;
+}
+.metric-card[data-v-ec8d540e]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    #3b82f6 0%, 
+    #a855f7 50%, 
+    #06b6d4 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.metric-card[data-v-ec8d540e]:hover::before {
+  opacity: 1;
+}
+.metric-card--blue[data-v-ec8d540e]::before {
+  background: linear-gradient(90deg, #60a5fa, #2563eb);
+}
+.metric-card--green[data-v-ec8d540e]::before {
+  background: linear-gradient(90deg, #4ade80, #16a34a);
+}
+.metric-card--purple[data-v-ec8d540e]::before {
+  background: linear-gradient(90deg, #c084fc, #9333ea);
+}
+.metric-card--red[data-v-ec8d540e]::before {
+  background: linear-gradient(90deg, #f87171, #dc2626);
+}
+.metric-card--yellow[data-v-ec8d540e]::before {
+  background: linear-gradient(90deg, #facc15, #ca8a04);
+}
+.metric-card--cyan[data-v-ec8d540e]::before {
+  background: linear-gradient(90deg, #22d3ee, #0891b2);
+}
+.metric-card--loading[data-v-ec8d540e] {
+  pointer-events: none;
+}
+
+.empty-state-card[data-v-1e7d5a8b] {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dashboard-overview[data-v-fe21590f] > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.dashboard-page[data-v-d20db149] {
+  background-attachment: fixed;
+}
+
+/* 自定义滚动条 */
+.overflow-y-auto[data-v-d20db149]::-webkit-scrollbar {
+  width: 6px;
+}
+.overflow-y-auto[data-v-d20db149]::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+.overflow-y-auto[data-v-d20db149]::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+.overflow-y-auto[data-v-d20db149]::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

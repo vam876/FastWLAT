@@ -1,0 +1,49 @@
+appId: com.fastwlat.app
+productName: FastWLAT
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - "!**/.vscode/*"
+  - "!src/*"
+  - "!electron.vite.config.{js,ts,mjs,cjs}"
+  - "!{.eslintignore,.eslintrc.cjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}"
+  - "!{.env,.env.*,.npmrc,pnpm-lock.yaml}"
+  - "!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}"
+asarUnpack:
+  - "node_modules/ioredis/**/*"
+  - "node_modules/maxmind/**/*" 
+  - "node_modules/@maxmind/**/*"
+  - "**/*.node"
+  - "data/**/*"
+afterSign: null
+beforeBuild: null
+mac:
+  artifactName: ${name}-${version}-mac.${ext}
+  category: public.app-category.developer-tools
+win:
+  artifactName: ${name}-${version}-win.${ext}
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+  certificateFile: null
+  certificatePassword: null
+linux:
+  artifactName: ${name}-${version}-linux.${ext}
+  target:
+    - target: AppImage
+      arch:
+        - x64
+    - target: deb
+      arch:
+        - x64
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  warningsAsErrors: false
+portable:
+  artifactName: ${name}-${version}-portable.${ext}

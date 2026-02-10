@@ -1,0 +1,46 @@
+{
+  "name": "fastwlat",
+  "version": "1.1.0",
+  "description": "FastWLAT - Fast Web Log Analysis Tool",
+  "main": "./out/main/index.js",
+  "author": "FastWLAT Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/fastwlat"
+  },
+  "keywords": [
+    "log-analysis",
+    "web-logs",
+    "security",
+    "geolocation",
+    "electron",
+    "data-visualization"
+  ],
+  "scripts": {
+    "start": "electron .",
+    "verify": "node scripts/verify-build.js",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "build:dir": "electron-builder --dir",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/utils": "^4.0.0",
+    "buffer": "^6.0.3",
+    "date-fns": "^4.1.0",
+    "dexie": "^4.0.11",
+    "lodash-es": "^4.17.21",
+    "maxmind": "^5.0.0",
+    "minisearch": "^7.1.2",
+    "tar": "^7.4.3",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "electron": "^35.1.5",
+    "electron-builder": "^25.1.8"
+  }
+}

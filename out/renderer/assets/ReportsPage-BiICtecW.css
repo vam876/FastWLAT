@@ -1,0 +1,19 @@
+
+.reports-page[data-v-43083e90] {
+  min-height: 100vh;
+}
+
+/* 自定义滚动条 */
+.space-y-3[data-v-43083e90]::-webkit-scrollbar {
+  width: 6px;
+}
+.space-y-3[data-v-43083e90]::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+.space-y-3[data-v-43083e90]::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 3px;
+}
+.space-y-3[data-v-43083e90]::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
